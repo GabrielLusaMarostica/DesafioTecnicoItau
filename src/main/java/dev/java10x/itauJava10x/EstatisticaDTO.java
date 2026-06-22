@@ -1,0 +1,20 @@
+package dev.java10x.itauJava10x;
+
+import lombok.Getter;
+
+@Getter
+public class EstatisticaDTO {
+    private final Long count;
+    private final double avg;
+    private final double max;
+    private final double min;
+    private final double sum;
+
+    public EstatisticaDTO(Long count, double avg, double max, double min, double sum) {
+        this.count = count;
+        this.avg = avg;
+        this.max = max;
+        this.min = min;
+        this.sum = sum;
+    }
+}
