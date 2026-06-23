@@ -26,5 +26,9 @@ public class TransacoesController {
         }
     }
 
-
+    @DeleteMapping
+    public ResponseEntity deletar(){
+        transacaoService.deletarTransacoes();
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 }

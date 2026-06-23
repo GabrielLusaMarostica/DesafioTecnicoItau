@@ -1,5 +1,6 @@
 package dev.java10x.itauJava10x;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -7,6 +8,8 @@ import java.time.OffsetDateTime;
 
 @Service
 public class TransacaoService {
+
+    @Autowired TransacaoRepository transacaoRepository;
 
     public void validarTransacao(TransacaoRequest transacaoRequest){
         if(transacaoRequest.getValor() == null){
@@ -19,10 +22,17 @@ public class TransacaoService {
             //transacao nao é valida
             throw new IllegalArgumentException("Erro: Transacoes devem ter valor maior que 0");
         }
-        if(transacaoRequest.getDataHora().isAfter(OffsetDateTime.now())){
+        if(transacaoRequest.getDataHora().isAfter(OffsetDateTime.now())) {
             throw new IllegalArgumentException("Erro: Transacoes nao podem ser feitas no futuro");
         }
+    }
 
+    public void salvarDados(TransacaoRequest transacaoRequest){
+        transacaoRepository.salvarDados(transacaoRequest);
+    }
+
+    public void deletarTransacoes(){
+        transacaoRepository.deletarDados();
     }
 
 }
