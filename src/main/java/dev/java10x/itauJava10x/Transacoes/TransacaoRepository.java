@@ -1,4 +1,4 @@
-package dev.java10x.itauJava10x;
+package dev.java10x.itauJava10x.Transacoes;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
