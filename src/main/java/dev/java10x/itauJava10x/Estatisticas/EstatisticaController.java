@@ -1,5 +1,6 @@
 package dev.java10x.itauJava10x.Estatisticas;
 
+import dev.java10x.itauJava10x.Docs.EstatisticaControllerDoc;
 import dev.java10x.itauJava10x.Transacoes.TransacaoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import java.time.OffsetDateTime;
 @Slf4j
 @RestController
 @RequestMapping("/estatistica")
-public class EstatisticaController {
+public class EstatisticaController implements EstatisticaControllerDoc {
     @Autowired
     private EstatisticasProperties estatisticasProperties;
 
